@@ -28,10 +28,15 @@ struct About: View {
                     Text(appVersion).font(.callout)
                 }
                 Text("一款实现防休眠功能的小工具，由开发者 [yangshoulai](https://github.com/yangshoulai) 开发。")
-                    .frame(width: 240)
                     .multilineTextAlignment(.leading)
                     .lineSpacing(6)
             }
-        }.padding()
+        }.padding().frame(width: 360)
+    }
+}
+
+struct About_Previews: PreviewProvider {
+    static var previews: some View {
+        About()
     }
 }

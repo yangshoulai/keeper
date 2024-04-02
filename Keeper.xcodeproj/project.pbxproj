@@ -16,20 +16,20 @@
 		0801FC422BBA594500A47885 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801FC412BBA594500A47885 /* Duration.swift */; };
 		0801FC452BBAB6CB00A47885 /* AssertionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801FC442BBAB6CB00A47885 /* AssertionManager.swift */; };
 		0801FC472BBBA07100A47885 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801FC462BBBA07100A47885 /* About.swift */; };
+		08E54B852BBC41DA00D381E3 /* LaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08F312622BBC30CB00AF4044 /* LaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		08F312652BBC30CB00AF4044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F312642BBC30CB00AF4044 /* AppDelegate.swift */; };
 		08F312672BBC30CD00AF4044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F312662BBC30CD00AF4044 /* Assets.xcassets */; };
 		08F3126A2BBC30CD00AF4044 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08F312682BBC30CD00AF4044 /* MainMenu.xib */; };
-		08F312702BBC317E00AF4044 /* LaunchHelper.app in CopyFiles */ = {isa = PBXBuildFile; fileRef = 08F312622BBC30CB00AF4044 /* LaunchHelper.app */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
-		08F3126F2BBC314800AF4044 /* CopyFiles */ = {
+		08E54B842BBC41C500D381E3 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "   private func isAutoStartup() -> Bool{\n        if #available(macOS 13.0, *){\n            return SMAppService.mainApp.status == .enabled;\n        }else{\n            \n        }\n  Contents/Library/LoginItems";
+			dstPath = Contents/Library/LoginItems;
 			dstSubfolderSpec = 1;
 			files = (
-				08F312702BBC317E00AF4044 /* LaunchHelper.app in CopyFiles */,
+				08E54B852BBC41DA00D381E3 /* LaunchHelper.app in CopyFiles */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -160,7 +160,7 @@
 				0801FC232BBA43A500A47885 /* Sources */,
 				0801FC242BBA43A500A47885 /* Frameworks */,
 				0801FC252BBA43A500A47885 /* Resources */,
-				08F3126F2BBC314800AF4044 /* CopyFiles */,
+				08E54B842BBC41C500D381E3 /* CopyFiles */,
 			);
 			buildRules = (
 			);
@@ -408,7 +408,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Keeper/Keeper.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -441,7 +441,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
 				CODE_SIGN_ENTITLEMENTS = Keeper/Keeper.entitlements;
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -473,12 +473,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LaunchHelper/LaunchHelper.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TDB2JCC28X;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = LaunchHelper;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSBackgroundOnly = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
@@ -505,12 +507,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = LaunchHelper/LaunchHelper.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = TDB2JCC28X;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = LaunchHelper;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSBackgroundOnly = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";

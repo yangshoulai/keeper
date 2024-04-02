@@ -53,7 +53,17 @@ class AppDelegate:NSObject ,NSApplicationDelegate {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(powerStateChanged), name: Notification.Name.NSProcessInfoPowerStateDidChange, object: nil)
+        
     }
+    
+    func terminateLauncherAppIfPossible(){
+        for app in NSWorkspace.shared.runningApplications{
+            if app.bundleIdentifier == "com.yangshoulai.keeper.LaunchHelper"{
+                DistributedNotificationCenter.default().post(name: NSNotification.Name(rawValue: ""), object: Bundle.main.bundleIdentifier)
+            }
+        }
+    }
+    
     @objc func togglePopover() {
         if let statusButton = statusItem.button{
             if popover.isShown {
@@ -87,7 +97,7 @@ class AppDelegate:NSObject ,NSApplicationDelegate {
     
     @objc func changeMenubarIcon(){
         
-        var img = NSImage(systemSymbolName: status.enable ? "warninglight.fill" : "warninglight", accessibilityDescription: nil)
+        var img = NSImage(systemSymbolName: status.enable ? "cup.and.saucer.fill" : "cup.and.saucer.fill", accessibilityDescription: nil)
         if !status.enable {
             let conf: NSImage.SymbolConfiguration = NSImage.SymbolConfiguration()
                 .applying(.init(hierarchicalColor: .lightGray))
