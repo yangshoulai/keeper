@@ -16,8 +16,11 @@ class MenuStatusViewModel : ObservableObject {
     
     @Published var duration = 30
     
-    var assertionManager:AssertionManager
+    @Published var allowDisplaySleep = false
     
+    @Published var disableInLowPowerMode = false
+    
+    var assertionManager:AssertionManager
     
     init(assertionManager: AssertionManager){
         self.assertionManager = assertionManager
@@ -32,15 +35,19 @@ class MenuStatusViewModel : ObservableObject {
         self.enable = false
         self.autoStartup = UserDefaults.standard.bool(forKey: "keeper.autoStartup")
         self.duration = UserDefaults.standard.integer(forKey: "keeper.duration")
+        self.allowDisplaySleep = UserDefaults.standard.bool(forKey: "keeper.allowDisplaySleep")
+        self.disableInLowPowerMode = UserDefaults.standard.bool(forKey: "keeper.disableInLowPowerMode")
     }
     
     public  func store() -> Void {
         UserDefaults.standard.setValue(self.autoStartup, forKey: "keeper.autoStartup")
         UserDefaults.standard.setValue(self.duration, forKey: "keeper.duration")
+        UserDefaults.standard.setValue(self.allowDisplaySleep, forKey: "keeper.allowDisplaySleep")
+        UserDefaults.standard.setValue(self.disableInLowPowerMode, forKey: "keeper.disableInLowPowerMode")
     }
     
     public func enableApp(){
-        self.enable = assertionManager.create(timeout: Double(self.duration > 0 ? self.duration * 60 : Int.max))
+        self.enable = assertionManager.create(timeout: Double(self.duration > 0 ? self.duration * 60 : Int.max), allowDisplaySleep:  self.allowDisplaySleep)
         store()
     }
     
@@ -78,10 +85,23 @@ class MenuStatusViewModel : ObservableObject {
     public func setDuration(_ d: Int){
         self.duration = d
         if self.enable {
-            self.enable =  assertionManager.create(timeout: Double(self.duration > 0 ? self.duration * 60 : Int.max))
+            enableApp()
         }
         store()
     }
     
+    public func enableAllowDisplaySleep(){
+        if self.enable {
+            enableApp()
+        }
+        store()
+    }
+    
+    public func disableAllowDisplaySleep(){
+        if self.enable {
+            enableApp()
+        }
+        store()
+    }
     
 }

@@ -96,6 +96,37 @@ struct ContentView: View {
                 
                 
                 Divider()
+                
+                MenuItem(){HStack{
+                    Text("允许屏幕休眠")
+                        .font(.callout)
+                        .fontWeight(.bold)
+                    Spacer()
+                    Toggle(isOn: $status.allowDisplaySleep) {
+                        Text("")
+                    }.toggleStyle(.switch).onChange(of: status.allowDisplaySleep){
+                        o, n in
+                        if n {
+                            status.enableAllowDisplaySleep()
+                        }else{
+                            status.disableAllowDisplaySleep()
+                        }
+                    }.controlSize(.small)
+                }}
+                
+                MenuItem(){HStack{
+                    Text("低电量自动停用")
+                        .font(.callout)
+                        .fontWeight(.bold)
+                    Spacer()
+                    Toggle(isOn: $status.disableInLowPowerMode) {
+                        Text("")
+                    }.toggleStyle(.switch).onChange(of: status.disableInLowPowerMode){
+                        o, n in
+                        status.store()
+                    }.controlSize(.small)
+                }}
+                
                 MenuItem(){HStack{
                     Text("开机自动启动")
                         .font(.callout)

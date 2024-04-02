@@ -51,6 +51,8 @@ class AppDelegate:NSObject ,NSApplicationDelegate {
             [weak self] event in
             self?.popover.performClose(event)
         }
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(powerStateChanged), name: Notification.Name.NSProcessInfoPowerStateDidChange, object: nil)
     }
     @objc func togglePopover() {
         if let statusButton = statusItem.button{
@@ -60,6 +62,13 @@ class AppDelegate:NSObject ,NSApplicationDelegate {
                 popover.show(relativeTo: statusButton.bounds, of: statusButton, preferredEdge: NSRectEdge.minY)
                 popover.contentViewController?.view.window?.makeKey()
             }
+        }
+    }
+    
+    @objc func powerStateChanged(_ notification: Notification) {
+        guard ProcessInfo.processInfo.isLowPowerModeEnabled else { return }
+        if status.disableInLowPowerMode {
+            status.disableApp()
         }
     }
     

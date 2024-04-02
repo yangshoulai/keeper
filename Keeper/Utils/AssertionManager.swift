@@ -16,11 +16,11 @@ class AssertionManager {
         return assertionId != IOPMAssertionID(0)
     }
     
-    func create(timeout:CFTimeInterval) -> Bool{
+    func create(timeout:CFTimeInterval, allowDisplaySleep: Bool) -> Bool{
         if !clear(){
             return false
         }
-        let type = kIOPMAssertionTypeNoDisplaySleep as CFString
+        let type = (allowDisplaySleep ? kIOPMAssertionTypeNoIdleSleep : kIOPMAssertionTypeNoDisplaySleep) as CFString
         let name = "Keeper" as CFString
         let timeoutAction = kIOPMAssertionTimeoutActionRelease as CFString
         let success = IOPMAssertionCreateWithDescription(
