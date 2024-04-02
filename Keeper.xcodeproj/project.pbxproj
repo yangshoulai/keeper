@@ -7,19 +7,29 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0801FC2B2BBA43A500A47885 /* Keeper2App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801FC2A2BBA43A500A47885 /* Keeper2App.swift */; };
+		0801FC2B2BBA43A500A47885 /* KeeperApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801FC2A2BBA43A500A47885 /* KeeperApp.swift */; };
 		0801FC2D2BBA43A500A47885 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801FC2C2BBA43A500A47885 /* ContentView.swift */; };
 		0801FC2F2BBA43A600A47885 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0801FC2E2BBA43A600A47885 /* Assets.xcassets */; };
 		0801FC322BBA43A600A47885 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0801FC312BBA43A600A47885 /* Preview Assets.xcassets */; };
+		0801FC3B2BBA449500A47885 /* MenuStatusViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801FC3A2BBA449500A47885 /* MenuStatusViewModel.swift */; };
+		0801FC3F2BBA4ED600A47885 /* MenuItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801FC3E2BBA4ED600A47885 /* MenuItem.swift */; };
+		0801FC422BBA594500A47885 /* Duration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801FC412BBA594500A47885 /* Duration.swift */; };
+		0801FC452BBAB6CB00A47885 /* AssertionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801FC442BBAB6CB00A47885 /* AssertionManager.swift */; };
+		0801FC472BBBA07100A47885 /* About.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0801FC462BBBA07100A47885 /* About.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		0801FC272BBA43A500A47885 /* Keeper2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keeper2.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		0801FC2A2BBA43A500A47885 /* Keeper2App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Keeper2App.swift; sourceTree = "<group>"; };
+		0801FC272BBA43A500A47885 /* Keeper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Keeper.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		0801FC2A2BBA43A500A47885 /* KeeperApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeeperApp.swift; sourceTree = "<group>"; };
 		0801FC2C2BBA43A500A47885 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0801FC2E2BBA43A600A47885 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0801FC312BBA43A600A47885 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
-		0801FC332BBA43A600A47885 /* Keeper2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Keeper2.entitlements; sourceTree = "<group>"; };
+		0801FC332BBA43A600A47885 /* Keeper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Keeper.entitlements; sourceTree = "<group>"; };
+		0801FC3A2BBA449500A47885 /* MenuStatusViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuStatusViewModel.swift; sourceTree = "<group>"; };
+		0801FC3E2BBA4ED600A47885 /* MenuItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItem.swift; sourceTree = "<group>"; };
+		0801FC412BBA594500A47885 /* Duration.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Duration.swift; sourceTree = "<group>"; };
+		0801FC442BBAB6CB00A47885 /* AssertionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssertionManager.swift; sourceTree = "<group>"; };
+		0801FC462BBBA07100A47885 /* About.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = About.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -36,7 +46,7 @@
 		0801FC1E2BBA43A500A47885 = {
 			isa = PBXGroup;
 			children = (
-				0801FC292BBA43A500A47885 /* Keeper2 */,
+				0801FC292BBA43A500A47885 /* Keeper */,
 				0801FC282BBA43A500A47885 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -44,21 +54,26 @@
 		0801FC282BBA43A500A47885 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				0801FC272BBA43A500A47885 /* Keeper2.app */,
+				0801FC272BBA43A500A47885 /* Keeper.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		0801FC292BBA43A500A47885 /* Keeper2 */ = {
+		0801FC292BBA43A500A47885 /* Keeper */ = {
 			isa = PBXGroup;
 			children = (
-				0801FC2A2BBA43A500A47885 /* Keeper2App.swift */,
+				0801FC432BBAB6BB00A47885 /* Utils */,
+				0801FC402BBA593700A47885 /* Model */,
+				0801FC392BBA447D00A47885 /* ViewModel */,
+				0801FC2A2BBA43A500A47885 /* KeeperApp.swift */,
 				0801FC2C2BBA43A500A47885 /* ContentView.swift */,
 				0801FC2E2BBA43A600A47885 /* Assets.xcassets */,
-				0801FC332BBA43A600A47885 /* Keeper2.entitlements */,
+				0801FC332BBA43A600A47885 /* Keeper.entitlements */,
 				0801FC302BBA43A600A47885 /* Preview Content */,
+				0801FC3E2BBA4ED600A47885 /* MenuItem.swift */,
+				0801FC462BBBA07100A47885 /* About.swift */,
 			);
-			path = Keeper2;
+			path = Keeper;
 			sourceTree = "<group>";
 		};
 		0801FC302BBA43A600A47885 /* Preview Content */ = {
@@ -69,12 +84,36 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		0801FC392BBA447D00A47885 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0801FC3A2BBA449500A47885 /* MenuStatusViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0801FC402BBA593700A47885 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				0801FC412BBA594500A47885 /* Duration.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0801FC432BBAB6BB00A47885 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				0801FC442BBAB6CB00A47885 /* AssertionManager.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		0801FC262BBA43A500A47885 /* Keeper2 */ = {
+		0801FC262BBA43A500A47885 /* Keeper */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 0801FC362BBA43A600A47885 /* Build configuration list for PBXNativeTarget "Keeper2" */;
+			buildConfigurationList = 0801FC362BBA43A600A47885 /* Build configuration list for PBXNativeTarget "Keeper" */;
 			buildPhases = (
 				0801FC232BBA43A500A47885 /* Sources */,
 				0801FC242BBA43A500A47885 /* Frameworks */,
@@ -84,9 +123,9 @@
 			);
 			dependencies = (
 			);
-			name = Keeper2;
+			name = Keeper;
 			productName = Keeper2;
-			productReference = 0801FC272BBA43A500A47885 /* Keeper2.app */;
+			productReference = 0801FC272BBA43A500A47885 /* Keeper.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -104,7 +143,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 0801FC222BBA43A500A47885 /* Build configuration list for PBXProject "Keeper2" */;
+			buildConfigurationList = 0801FC222BBA43A500A47885 /* Build configuration list for PBXProject "Keeper" */;
 			compatibilityVersion = "Xcode 14.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -117,7 +156,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				0801FC262BBA43A500A47885 /* Keeper2 */,
+				0801FC262BBA43A500A47885 /* Keeper */,
 			);
 		};
 /* End PBXProject section */
@@ -139,8 +178,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0801FC422BBA594500A47885 /* Duration.swift in Sources */,
 				0801FC2D2BBA43A500A47885 /* ContentView.swift in Sources */,
-				0801FC2B2BBA43A500A47885 /* Keeper2App.swift in Sources */,
+				0801FC472BBBA07100A47885 /* About.swift in Sources */,
+				0801FC452BBAB6CB00A47885 /* AssertionManager.swift in Sources */,
+				0801FC3F2BBA4ED600A47885 /* MenuItem.swift in Sources */,
+				0801FC3B2BBA449500A47885 /* MenuStatusViewModel.swift in Sources */,
+				0801FC2B2BBA43A500A47885 /* KeeperApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -270,22 +314,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Keeper2/Keeper2.entitlements;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = Keeper/Keeper.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Keeper2/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Keeper/Preview Content\"";
 				DEVELOPMENT_TEAM = A9T264253W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Keeper;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yangshoulai.Keeper2;
+				MARKETING_VERSION = v1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangshoulai.keeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -297,22 +346,27 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_ENTITLEMENTS = Keeper2/Keeper2.entitlements;
+				ASSETCATALOG_COMPILER_INCLUDE_ALL_APPICON_ASSETS = NO;
+				CODE_SIGN_ENTITLEMENTS = Keeper/Keeper.entitlements;
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Keeper2/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Keeper/Preview Content\"";
 				DEVELOPMENT_TEAM = A9T264253W;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Keeper;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = com.yangshoulai.Keeper2;
+				MARKETING_VERSION = v1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.yangshoulai.keeper;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -322,7 +376,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		0801FC222BBA43A500A47885 /* Build configuration list for PBXProject "Keeper2" */ = {
+		0801FC222BBA43A500A47885 /* Build configuration list for PBXProject "Keeper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0801FC342BBA43A600A47885 /* Debug */,
@@ -331,7 +385,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		0801FC362BBA43A600A47885 /* Build configuration list for PBXNativeTarget "Keeper2" */ = {
+		0801FC362BBA43A600A47885 /* Build configuration list for PBXNativeTarget "Keeper" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				0801FC372BBA43A600A47885 /* Debug */,
