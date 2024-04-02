@@ -35,8 +35,6 @@ import Cocoa
 import IOKit.pwr_mgt
 struct ContentView: View {
     
-    @Environment(\.openWindow) private var openWindow
-    
     @ObservedObject var status :MenuStatusViewModel
     
     @State var c : Color = Color.gray.opacity(1)
@@ -63,7 +61,7 @@ struct ContentView: View {
                     Toggle(isOn: $status.enable) {
                         Text("")
                     }.toggleStyle(.switch).onChange(of: status.enable){
-                        oldValue, newValue in
+                        newValue in
                         
                         if newValue{
                             status.enableApp()
@@ -87,7 +85,7 @@ struct ContentView: View {
                                 Text(d.label).tag(d.minutes)
                             }
                         }.frame(width: 100) .onChange(of: status.duration){
-                            o, n in
+                            n in
                             status.setDuration(n)
                         }
                     }
@@ -105,7 +103,7 @@ struct ContentView: View {
                     Toggle(isOn: $status.allowDisplaySleep) {
                         Text("")
                     }.toggleStyle(.switch).onChange(of: status.allowDisplaySleep){
-                        o, n in
+                         n in
                         if n {
                             status.enableAllowDisplaySleep()
                         }else{
@@ -122,7 +120,7 @@ struct ContentView: View {
                     Toggle(isOn: $status.disableInLowPowerMode) {
                         Text("")
                     }.toggleStyle(.switch).onChange(of: status.disableInLowPowerMode){
-                        o, n in
+                       n in
                         status.store()
                     }.controlSize(.small)
                 }}
@@ -135,7 +133,7 @@ struct ContentView: View {
                     Toggle(isOn: $status.autoStartup) {
                         Text("")
                     }.toggleStyle(.switch).onChange(of: status.autoStartup){
-                        o, n in
+                         n in
                         if n {
                             status.enableAutoStartup()
                         }else{
@@ -174,8 +172,4 @@ struct ContentView: View {
         }.frame(width: 220,  alignment: .topLeading)
     }
     
-}
-
-#Preview {
-    ContentView(status: MenuStatusViewModel(assertionManager:  AssertionManager()))
 }

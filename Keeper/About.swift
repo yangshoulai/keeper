@@ -35,7 +35,3 @@ struct About: View {
         }.padding()
     }
 }
-
-#Preview {
-    About()
-}

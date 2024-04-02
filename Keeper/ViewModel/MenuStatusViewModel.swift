@@ -9,6 +9,7 @@ import Foundation
 import ServiceManagement
 import SwiftUI
 class MenuStatusViewModel : ObservableObject {
+    let launchAppIdentifier = "com.yangshoulai.keeper.LaunchHelper"
     
     @Published var enable = false
     
@@ -25,10 +26,6 @@ class MenuStatusViewModel : ObservableObject {
     init(assertionManager: AssertionManager){
         self.assertionManager = assertionManager
         load()
-        if self.autoStartup != (SMAppService.mainApp.status == .enabled){
-            self.autoStartup = SMAppService.mainApp.status == .enabled
-            store()
-        }
     }
     
     public  func load() -> Void {
@@ -57,28 +54,12 @@ class MenuStatusViewModel : ObservableObject {
     }
     
     public func enableAutoStartup(){
-        let enabled = SMAppService.mainApp.status == .enabled
-        if !enabled{
-            do {
-                try SMAppService.mainApp.register()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        self.autoStartup = SMAppService.mainApp.status == .enabled
+        self.autoStartup = addLoginItem()
         store()
     }
     
     public func disableAutoStartup(){
-        let enabled = SMAppService.mainApp.status == .enabled
-        if enabled{
-            do {
-                try SMAppService.mainApp.unregister()
-            } catch {
-                print(error.localizedDescription)
-            }
-        }
-        self.autoStartup = SMAppService.mainApp.status == .enabled
+        self.autoStartup = !removeLoginItem()
         store()
     }
     
@@ -104,4 +85,34 @@ class MenuStatusViewModel : ObservableObject {
         store()
     }
     
+
+    private func addLoginItem() -> Bool{
+        if #available(macOS 13.0, *){
+            do {
+                try SMAppService.mainApp.register()
+                return true
+            }catch {
+                print(error.localizedDescription)
+            }
+            
+        }else{
+            return SMLoginItemSetEnabled(launchAppIdentifier as CFString,  true)
+        }
+        return false
+    }
+    
+    private func removeLoginItem() -> Bool{
+        if #available(macOS 13.0, *){
+            do {
+                try SMAppService.mainApp.unregister()
+                return true
+            }catch {
+                print(error.localizedDescription)
+            }
+        }else{
+            return SMLoginItemSetEnabled(launchAppIdentifier as CFString,  false)
+        }
+        
+        return false
+    }
 }
