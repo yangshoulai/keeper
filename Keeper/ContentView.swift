@@ -41,6 +41,8 @@ struct ContentView: View {
     
     var assertionManager : AssertionManager = AssertionManager()
     
+    @State var durationEnd: String = ""
+    
     var body: some View {
         
         ZStack(alignment: .topLeading){
@@ -52,7 +54,7 @@ struct ContentView: View {
                             .font(.callout)
                             .fontWeight(.bold)
                         if status.enable{
-                            Text("活动至 \(formatDate(status.duration))")
+                            Text("活动至 \(durationEnd)")
                                 .font(.caption2)
                                 .foregroundColor(.gray)
                         }
@@ -62,10 +64,11 @@ struct ContentView: View {
                         Text("")
                     }.toggleStyle(.switch).onChange(of: status.enable){
                         newValue in
-                        
                         if newValue{
+                            durationEnd = formatDate(status.duration)
                             status.enableApp()
                         }else {
+                            durationEnd = ""
                             status.disableApp()
                         }
                         NSApp.sendAction(#selector(AppDelegate.changeMenubarIcon), to: nil, from: nil)
@@ -84,9 +87,12 @@ struct ContentView: View {
                                 d in
                                 Text(d.label).tag(d.minutes)
                             }
-                        }.frame(width: 100) .onChange(of: status.duration){
+                        }.frame(width: 100).onChange(of: status.duration){
                             n in
                             status.setDuration(n)
+                            if status.enable {
+                                durationEnd = formatDate(status.duration)
+                            }
                         }
                     }
                 }

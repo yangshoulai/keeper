@@ -8,6 +8,7 @@
 import Foundation
 import ServiceManagement
 import SwiftUI
+
 class MenuStatusViewModel : ObservableObject {
     let launchAppIdentifier = "com.yangshoulai.keeper.LaunchHelper"
     

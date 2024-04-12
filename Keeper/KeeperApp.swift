@@ -6,6 +6,9 @@
 //
 
 import SwiftUI
+import OSLog
+
+var logger = Logger(subsystem: "com.yangshoulai.keeper", category: "KeeperApp")
 
 @main
 struct KeeperApp: App {
@@ -53,15 +56,18 @@ class AppDelegate:NSObject ,NSApplicationDelegate {
         }
         
         NotificationCenter.default.addObserver(self, selector: #selector(powerStateChanged), name: Notification.Name.NSProcessInfoPowerStateDidChange, object: nil)
-        
+        terminateLauncherAppIfPossible()
     }
     
     func terminateLauncherAppIfPossible(){
         for app in NSWorkspace.shared.runningApplications{
-            if app.bundleIdentifier == "com.yangshoulai.keeper.LaunchHelper"{
-                DistributedNotificationCenter.default().post(name: NSNotification.Name(rawValue: ""), object: Bundle.main.bundleIdentifier)
+            if app.bundleIdentifier == "com.yangshoulai.keeper.launcher" {
+                logger.log("Keeper launcher is running, notify it to exit")
+                DistributedNotificationCenter.default().post(name: NSNotification.Name(rawValue: "KillLauncherApp"), object: Bundle.main.bundleIdentifier)
+                return
             }
         }
+        logger.log("Keeper launcher is not running")
     }
     
     @objc func togglePopover() {
@@ -78,7 +84,9 @@ class AppDelegate:NSObject ,NSApplicationDelegate {
     @objc func powerStateChanged(_ notification: Notification) {
         guard ProcessInfo.processInfo.isLowPowerModeEnabled else { return }
         if status.disableInLowPowerMode {
-            status.disableApp()
+            DispatchQueue.main.async {
+                self.status.disableApp()
+            }
         }
     }
     
