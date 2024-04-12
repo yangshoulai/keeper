@@ -10,7 +10,7 @@ import ServiceManagement
 import SwiftUI
 
 class MenuStatusViewModel : ObservableObject {
-    let launchAppIdentifier = "com.yangshoulai.keeper.LaunchHelper"
+    let launchAppIdentifier = "com.yangshoulai.keeper.launcher"
     
     @Published var enable = false
     
