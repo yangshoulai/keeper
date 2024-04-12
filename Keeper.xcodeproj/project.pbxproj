@@ -20,7 +20,6 @@
 		08F016782BC931BE009CD815 /* LauncherApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F016772BC931BE009CD815 /* LauncherApp.swift */; };
 		08F312652BBC30CB00AF4044 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 08F312642BBC30CB00AF4044 /* AppDelegate.swift */; };
 		08F312672BBC30CD00AF4044 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 08F312662BBC30CD00AF4044 /* Assets.xcassets */; };
-		08F3126A2BBC30CD00AF4044 /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = 08F312682BBC30CD00AF4044 /* MainMenu.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -52,7 +51,6 @@
 		08F312622BBC30CB00AF4044 /* LaunchHelper.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LaunchHelper.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		08F312642BBC30CB00AF4044 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		08F312662BBC30CD00AF4044 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		08F312692BBC30CD00AF4044 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/MainMenu.xib; sourceTree = "<group>"; };
 		08F3126B2BBC30CD00AF4044 /* LaunchHelper.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LaunchHelper.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,7 +152,6 @@
 			children = (
 				08F312642BBC30CB00AF4044 /* AppDelegate.swift */,
 				08F312662BBC30CD00AF4044 /* Assets.xcassets */,
-				08F312682BBC30CD00AF4044 /* MainMenu.xib */,
 				08F3126B2BBC30CD00AF4044 /* LaunchHelper.entitlements */,
 				08F016772BC931BE009CD815 /* LauncherApp.swift */,
 			);
@@ -255,7 +252,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				08F312672BBC30CD00AF4044 /* Assets.xcassets in Resources */,
-				08F3126A2BBC30CD00AF4044 /* MainMenu.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,17 +282,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		08F312682BBC30CD00AF4044 /* MainMenu.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				08F312692BBC30CD00AF4044 /* Base */,
-			);
-			name = MainMenu.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		0801FC342BBA43A600A47885 /* Debug */ = {
@@ -500,7 +485,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSBackgroundOnly = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSMainNibFile = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -534,7 +519,7 @@
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.utilities";
 				INFOPLIST_KEY_LSBackgroundOnly = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
-				INFOPLIST_KEY_NSMainNibFile = MainMenu;
+				INFOPLIST_KEY_NSMainNibFile = "";
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
